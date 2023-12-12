@@ -8,4 +8,7 @@ var socket = io.connect(url);
 function sendMessage() {
     var message = document.getElementById('message').value;
     console.log(message);
+    socket.emit('char_message', {
+        message:message,
+    })
 }
