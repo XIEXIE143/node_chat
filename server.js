@@ -1,6 +1,13 @@
 // express module 読み込み
 const express = require('express')
-// サーバー作成
+// http の createServer module 読み込み
+const { createServer } = require('node:http');
+// Socket.io の Sever module 読み込み
+const { Server } = require('socket.io');
+
+// Expressサーバー作成
 const app = express();
-// httpモジュールとExporess連携
-const http = require('http').createServer(app)
+const server = createServer(app);
+
+// Socket.io を作成
+const io = new Server(server);
